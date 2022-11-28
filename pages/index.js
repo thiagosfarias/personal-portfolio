@@ -46,7 +46,7 @@ export default function Home() {
 
           <div className='text-center p-10 mt-0'>
             <h2 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500'>{text1}</h2>
-            <p className='text-md py-5 leading-8 text-gray-800'>hey there! i'm thiago, currently living in brazil and working at a company called <a href='https://www.moskitcrm.com/' className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500'>Moskit CRM</a>.</p>
+            <p className='text-md py-5 leading-8 text-gray-800'>hey there! i am thiago, currently living in brazil and working at a company called <a href='https://www.moskitcrm.com/' className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500'>Moskit CRM</a>.</p>
           </div>
 
           <div className='text-5xl flex justify-center gap-16 text-gray-600'>
