@@ -1,20 +1,22 @@
-import Head from 'next/head'
-import {BsDownload, BsEmojiSmile} from 'react-icons/bs'
-import {AiFillLinkedin, AiFillInstagram, AiFillGithub} from 'react-icons/ai'
-import {IoDocumentAttachOutline} from 'react-icons/io'
-import {DiJava} from 'react-icons/di'
-import {FaServer, FaBook} from 'react-icons/fa'
-import {CgScreen} from 'react-icons/cg'
-import Image from 'next/image'
-import ProfilePic from '../public/profile-pic.png'
-import { useState, useEffect } from 'react'
+import Head from "next/head";
+import { BsDownload, BsEmojiSmile } from "react-icons/bs";
+import { AiFillLinkedin, AiFillInstagram, AiFillGithub } from "react-icons/ai";
+import { IoDocumentAttachOutline } from "react-icons/io";
+import { DiJava } from "react-icons/di";
+import { FaServer, FaBook } from "react-icons/fa";
+import { CgScreen,CgMoon } from "react-icons/cg";
+import Image from "next/image";
+import ProfilePic from "../public/profile-pic.png";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const name_text = "<thiago farias/>"
-  const fileUrl = "ensino-fundamental.pdf";
+  const name_text = "<thiago farias/>";
+  const fileUrl = "Curriculo_EN_THIAGO.pdf";
   const fileName = "resume.pdf";
+  const [darkMode, setDarkMode] = useState(false)
+  const bool = false;
 
-  const [text1, setText1] = useState("")
+  const [text1, setText1] = useState("");
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -22,6 +24,11 @@ export default function Home() {
     }, 100);
     return () => clearTimeout(timeout);
   }, [text1]);
+
+  const changeMode = () => {
+    setDarkMode(current => !current)
+    console.log(darkMode)
+  }
 
   return (
     <div>
@@ -31,56 +38,95 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='bg-white px-10'>
+      <main className={darkMode ? "bg-gray-800 px-10" : "bg-white px-10"}>
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between">
-            <h1 className='text-xl font-burtons text-i'>developedbythi <BsEmojiSmile className='cursor-pointer text-xl'/></h1>
+          <nav className="py-10 mb-12 flex justify-evenly">
+            <h1 className={darkMode ? "text-white text-xl font-burtons text-i" : "text-xl font-burtons text-i"}>
+              developedbythi
+            </h1>
 
-            <ul className='flex items-center'>
+           
+
+            <ul className="flex items-center">
               <li>
-                <a href={fileUrl} download={fileName}><BsDownload className='cursor-pointer text-xl'/></a>
+              <button onClick={changeMode}><CgMoon className={darkMode ? "text-white cursor-pointer text-2xl" : "cursor-pointer text-2xl"}/></button>
               </li>
-              <li><a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded ml-8' href={fileUrl} download={fileName}>Resume</a></li>
+              <li>
+                <a
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded ml-8"
+                  href={fileUrl}
+                  download={fileName}
+                >
+                  Resume
+                </a>
+              </li>
             </ul>
           </nav>
 
-          <div className='text-center p-10 mt-0'>
-            <h2 className='font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500'>{text1}</h2>
-            <p className='text-md py-5 leading-8 text-gray-800'>hey there! i am thiago, currently living in brazil and working at a company called <a href='https://www.moskitcrm.com/' className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500'>Moskit CRM</a>.</p>
+          <div className="text-center p-10 mt-0">
+            <h2 className="font-extrabold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">
+              {text1}
+            </h2>
+            <p className={darkMode ? "text-md py-5 leading-8 text-white" : "text-md py-5 leading-8 text-gray-800"}>
+              hey there! i am thiago, currently living in brazil and working at
+              a company called{" "}
+              <a
+                href="https://www.moskitcrm.com/"
+                className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500"
+              >
+                Moskit CRM
+              </a>
+              .
+            </p>
           </div>
 
-          <div className='text-5xl flex justify-center gap-16 text-gray-600'>
-            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/"><AiFillLinkedin/></a>
-            <a href='https://github.com/thiagosfarias'><AiFillGithub /></a>
-            <a href='https://www.instagram.com/thiagofarias.dev/'><AiFillInstagram /></a>
+          <div className={darkMode ? "text-5xl flex justify-center gap-16 text-white" : "text-5xl flex justify-center gap-16 text-gray-600"}>
+            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/">
+              <AiFillLinkedin />
+            </a>
+            <a href="https://github.com/thiagosfarias">
+              <AiFillGithub />
+            </a>
+            <a href="https://www.instagram.com/thiagofarias.dev/">
+              <AiFillInstagram />
+            </a>
           </div>
 
-          <div className='relative mx-auto rounded-full w-60 h-60 mt-10 overflow-hidden'>
-            <Image src={ProfilePic} layout='fill' objectFit='cover'/>
+          <div className="relative mx-auto rounded-full w-60 h-60 mt-10 overflow-hidden">
+            <Image src={ProfilePic} layout="fill" objectFit="cover" />
           </div>
 
-          <div className='flex flex-wrap justify-center gap-5 mb-5'>
-            <div className='w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl'>
-              <FaServer className='pt-2 w-28 h-28 text-white mx-auto'/>
-              <h3 className='text-lg font-medium pt-3 pb-2'>backend.</h3>
-              <p className='text-gray-800 ml-3 mr-3 text-justify text-md'>created applications using Java and Spring Framework, C# with .NET, mapping the databases with ORM frameworks such as MyBatis, JPA and DOMA; also using docker to improve the productivity</p>
+          <div className="flex flex-wrap justify-center gap-5 mb-5">
+            <div className="w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl">
+              <FaServer className="pt-2 w-28 h-28 text-white mx-auto" />
+              <h3 className="text-lg font-medium pt-3 pb-2">backend.</h3>
+              <p className="text-gray-800 ml-3 mr-3 text-justify text-md">
+                created applications using Java and Spring Framework, C# with
+                .NET, mapping the databases with ORM frameworks such as MyBatis,
+                JPA and DOMA; also using docker to improve the productivity
+              </p>
             </div>
 
-            <div className='w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl'>
-              <CgScreen className='pt-2 w-28 h-28 text-white mx-auto'/>
-              <h3 className='text-lg font-medium pt-3 pb-2'>frontend.</h3>
-              <p className='text-gray-800 ml-3 mr-3 text-justify'>created applications using ReactJS, NextJS and Tailwind, had also some minor projects using VueJS and JQuery</p>
+            <div className="w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl">
+              <CgScreen className="pt-2 w-28 h-28 text-white mx-auto" />
+              <h3 className="text-lg font-medium pt-3 pb-2">frontend.</h3>
+              <p className="text-gray-800 ml-3 mr-3 text-justify">
+                created applications using ReactJS, NextJS and Tailwind, had
+                also some minor projects using VueJS and JQuery
+              </p>
             </div>
 
-            <div className='w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl'>
-              <FaBook className='pt-2 w-28 h-28 text-white mx-auto'/>
-              <h3 className='text-lg font-medium pt-3 pb-2'>education.</h3>
-              <p className='text-gray-800 ml-3 mr-3 text-justify text-md'>studied Information Systems at IFMA - Federal Institute of Maranhao</p>
+            <div className="w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl">
+              <FaBook className="pt-2 w-28 h-28 text-white mx-auto" />
+              <h3 className="text-lg font-medium pt-3 pb-2">education.</h3>
+              <p className="text-gray-800 ml-3 mr-3 text-justify text-md">
+                studied Information Systems at IFMA - Federal Institute of
+                Maranhao
+              </p>
             </div>
-
           </div>
         </section>
       </main>
     </div>
-  )
+  );
 }
