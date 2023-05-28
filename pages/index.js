@@ -107,19 +107,19 @@ export default function Home() {
                 : "text-5xl flex justify-center gap-16 text-gray-600"
             }
           >
-            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/" target="_blank">
+            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/" target="_blank" rel="noreferrer" >
               <AiFillLinkedin />
             </a>
-            <a href="https://github.com/thiagosfarias" target="_blank">
+            <a href="https://github.com/thiagosfarias" target="_blank" rel="noreferrer" >
               <AiFillGithub />
             </a>
-            <a href="https://www.instagram.com/thiagofarias.dev/" target="_blank">
+            <a href="https://www.instagram.com/thiagofarias.dev/" target="_blank" rel="noreferrer" >
               <AiFillInstagram />
             </a>
           </div>
 
           <div className="relative mx-auto rounded-full w-60 h-60 mt-10 mb-10 overflow-hidden">
-            <Image src={ProfilePic} layout="fill" objectFit="cover" />
+            <Image  alt="image" src={ProfilePic} layout="fill" objectFit="cover" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-5">
