@@ -1,17 +1,14 @@
 import Head from "next/head";
-import { BsDownload, BsEmojiSmile } from "react-icons/bs";
 import { AiFillLinkedin, AiFillInstagram, AiFillGithub } from "react-icons/ai";
-import { IoDocumentAttachOutline } from "react-icons/io";
-import { DiJava } from "react-icons/di";
-import { FaServer, FaBook } from "react-icons/fa";
-import { CgScreen, CgMoon } from "react-icons/cg";
+import { FaServer, FaBook, FaBriefcase } from "react-icons/fa";
+import { CgMoon, CgSun } from "react-icons/cg";
 import Image from "next/image";
 import ProfilePic from "../public/profile-pic.png";
 import { useState, useEffect} from "react";
 
 export default function Home() {
   const name_text = "<thiago farias/>";
-  const fileUrl = "Curriculo_EN_THIAGO.pdf";
+  const fileUrl = "RESUME.pdf";
   const fileName = "resume.pdf";
   const [text1, setText1] = useState("");
 
@@ -60,13 +57,12 @@ export default function Home() {
             <ul className="flex items-center">
               <li>
                 <button onClick={switchTheme}>
-                  <CgMoon
-                    className={
-                      theme == 'light'
-                        ? "text-white cursor-pointer text-2xl"
-                        : "cursor-pointer text-2xl"
-                    }
-                  />
+                  {
+                    theme == 'light' ?
+                    <CgSun className={"text-white cursor-pointer text-2xl"}
+                  /> : 
+                    <CgMoon className={"text-black cursor-pointer text-2xl"}/>
+                  }
                 </button>
               </li>
               <li>
@@ -92,13 +88,13 @@ export default function Home() {
                   : "text-md py-5 leading-8 text-gray-800"
               }
             >
-              hey there! i am thiago, currently living in brazil and working at
+              hey there! i am thiago, based in brazil and working at
               a company called{" "}
               <a
                 href="https://www.moskitcrm.com/"
                 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500"
               >
-                Moskit CRM
+                Moskit
               </a>
               .
             </p>
@@ -111,29 +107,32 @@ export default function Home() {
                 : "text-5xl flex justify-center gap-16 text-gray-600"
             }
           >
-            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/">
+            <a href="https://www.linkedin.com/in/thiago-farias-b09280163/" target="_blank">
               <AiFillLinkedin />
             </a>
-            <a href="https://github.com/thiagosfarias">
+            <a href="https://github.com/thiagosfarias" target="_blank">
               <AiFillGithub />
             </a>
-            <a href="https://www.instagram.com/thiagofarias.dev/">
+            <a href="https://www.instagram.com/thiagofarias.dev/" target="_blank">
               <AiFillInstagram />
             </a>
           </div>
 
-          <div className="relative mx-auto rounded-full w-60 h-60 mt-10 overflow-hidden">
+          <div className="relative mx-auto rounded-full w-60 h-60 mt-10 mb-10 overflow-hidden">
             <Image src={ProfilePic} layout="fill" objectFit="cover" />
           </div>
 
           <div className="flex flex-wrap justify-center gap-5">
             <div className="w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl">
               <FaServer className="pt-2 w-28 h-28 text-white mx-auto" />
-              <h3 className="text-lg font-medium pt-3 pb-2">backend.</h3>
+              <h3 className="text-lg font-medium pt-3 pb-2">background.</h3>
               <p className="text-gray-800 ml-3 mr-3 text-justify text-md">
-                created applications using Java and Spring Framework, C# with
-                .NET, mapping the databases with ORM frameworks such as MyBatis,
-                JPA and DOMA; also using docker to improve the productivity
+              highly skilled and motivated Backend Developer with expertise in Java and Groovy programming languages, 
+              along with extensive knowledge of the Spring Framework and Quarkus Framework. 
+              Proficient in event-driven development with messaging systems like ActiveMQ for efficient communication. 
+              Acquainted with various databases, such as: MySQL, SQL Server, PostgreSQL and MariaDB. 
+              Experienced in building and maintaining robust Rest APIs, SOAP services with HTTP and RPC protocols. 
+              Passionate about delivering scalable and performant backend solutions.
               </p>
             </div>
 
@@ -142,7 +141,23 @@ export default function Home() {
               <h3 className="text-lg font-medium pt-3 pb-2">education.</h3>
               <p className="text-gray-800 ml-3 mr-3 text-justify text-md">
                 studied Information Systems at IFMA - Federal Institute of
-                Maranhao
+                Maranhao, troughtout the course had to cover a wide range of topics, 
+                including database management, network infrastructure, cybersecurity, software development, project management, and data analytics. 
+                Building a solid foundation in areas such as data modeling, data warehousing, system integration, and information security. 
+                By delving into real-world case studies and hands-on projects, i learnt to apply theoretical concepts to practical scenarios.
+              </p>
+            </div>
+
+            <div className="w-96 mt-6 mb-2 bg-gradient-to-r from-cyan-500 to-teal-500 text-center shadow-lg pt-5 pb-5 rounded-xl">
+              <FaBriefcase className="pt-2 w-28 h-28 text-white mx-auto" />
+              <h3 className="text-lg font-medium pt-3 pb-2">where i been.</h3>
+              <p className="text-gray-800 ml-3 mr-3 text-justify text-md">
+                <ul className="grid-flow-row">
+                  <li className="mb-3"><strong>ocidental informatica</strong> - Intern FullStack Developer | Sep 2019 - Feb 2020</li>
+                  <li className="mb-3"><strong>agrotols</strong> - Junior FullStack Developer | Jan 2021 - Jul 2021</li>
+                  <li className="mb-3"><strong>pulse</strong> - Junior FullStack Developer | Aug 2021 - Aug 2022</li>
+                  <li className="mb-3"><strong>moskit</strong> - Mid Backend Developer | Sep 2022 - moment</li>
+                </ul>
               </p>
             </div>
           </div>
