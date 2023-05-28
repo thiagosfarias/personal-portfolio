@@ -42,11 +42,11 @@ export default function Home() {
 
       <main
         className={
-          theme == "light" ? "bg-gray-800 px-10 pb-10" : "bg-white px-10 pb-10"
+          theme == "light" ? "bg-gray-800 px-10 pb-10" : "bg-teal-100 px-10 pb-10"
         }
       >
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-evenly items-center">
+          <nav className="py-10 mb-2 flex justify-evenly items-center">
             <h1
               className={
                 theme == "light"
@@ -69,7 +69,7 @@ export default function Home() {
               </li>
               <li>
                 <a
-                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded ml-8"
+                  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded ml-8 hover:font-extrabold hover:text-cyan-800 hover:border-2 hover:border-teal-700"
                   href={fileUrl}
                   download={fileName}
                 >
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center items-center gap-3">
             <div>
               <div className="text-center p-1 h-30">
-                <h2 className="hover:scale-105 hover:transition-transform h-auto font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 pb-2">
+                <h2 className="hover:scale-105 animate-bounce hover:transition-transform h-auto font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500 pb-2">
                   {text1}
                 </h2>
                 <p
@@ -92,7 +92,7 @@ export default function Home() {
                       : "text-md py-5 leading-8 text-gray-800"
                   }
                 >
-                  hey there! i am thiago, based in brazil and working at a
+                  Hey there! I am Thiago, based in brazil and working at a
                   company called{" "}
                   <a
                     href="https://www.moskitcrm.com/"
@@ -109,8 +109,8 @@ export default function Home() {
               <div
                 className={
                   theme == "light"
-                    ? "text-5xl flex justify-center gap-16 text-white"
-                    : "text-5xl flex justify-center gap-16 text-gray-800"
+                    ? "text-5xl flex justify-center gap-8 text-white"
+                    : "text-5xl flex justify-center gap-8 text-cyan-700"
                 }
               >
                 <a
@@ -118,21 +118,21 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <AiFillLinkedin className="hover:scale-105 hover:text-teal-500"/>
+                  <AiFillLinkedin className="hover:scale-105 hover:text-teal-700"/>
                 </a>
                 <a
                   href="https://github.com/thiagosfarias"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <AiFillGithub className="hover:scale-105 hover:text-teal-500"/>
+                  <AiFillGithub className="hover:scale-105 hover:text-teal-700"/>
                 </a>
                 <a
                   href="https://www.instagram.com/thiagofarias.dev/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <AiFillInstagram className="hover:scale-105 hover:text-teal-500"/>
+                  <AiFillInstagram className="hover:scale-105 hover:text-teal-700"/>
                 </a>
               </div>
 
@@ -148,12 +148,15 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl">
+            <div className={theme == 'light' ? 
+                "border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl" :
+                "bg-teal-50 border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl"
+          }>
               <FaServer
                 className={
                   theme == "light"
                     ? "pt-2 text-white w-28 h-28 mx-auto"
-                    : "text-cyan-500 pt-2 w-28 h-28 bg- mx-auto"
+                    : "text-cyan-700 pt-2 w-28 h-28 bg- mx-auto"
                 }
               />
               <h3
@@ -172,8 +175,7 @@ export default function Home() {
                     : "text-black ml-3 mr-3 text-justify text-md"
                 }
               >
-                studied Information Systems at IFMA - Federal Institute of
-                highly skilled and motivated Backend Developer with expertise in
+                Highly skilled and motivated Backend Developer with expertise in
                 Java and Groovy programming languages, along with extensive
                 knowledge of the Spring Framework and Quarkus Framework.
                 Proficient in event-driven development with messaging systems
@@ -185,12 +187,15 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl">
+            <div className={theme == 'light' ? 
+                "border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl" :
+                "bg-teal-50 border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl"
+          }>
               <FaBook
                 className={
                   theme == "light"
                     ? "pt-2 text-white w-28 h-28 mx-auto"
-                    : "text-cyan-500 pt-2 w-28 h-28 bg- mx-auto"
+                    : "text-cyan-700 pt-2 w-28 h-28 bg- mx-auto"
                 }
               />
               <h3
@@ -209,7 +214,7 @@ export default function Home() {
                     : "text-black ml-3 mr-3 text-justify text-md"
                 }
               >
-                studied Information Systems at IFMA - Federal Institute of
+                Studied Information Systems at IFMA - Federal Institute of
                 Maranhao, troughtout the course had to cover a wide range of
                 topics, including database management, network infrastructure,
                 cybersecurity, software development, project management, and
@@ -221,12 +226,15 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl">
+            <div className={theme == 'light' ? 
+                "border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl" :
+                "bg-teal-50 border-2 border-cyan-500 hover:scale-105 hover:border-4 hover:transition-transform w-96 mt-6 mb-2 text-center shadow-lg pt-5 pb-5 rounded-xl"
+          }>
               <FaBriefcase
                 className={
                   theme == "light"
                     ? "pt-2 text-white w-28 h-28 mx-auto"
-                    : "text-cyan-500 pt-2 w-28 h-28 bg- mx-auto"
+                    : "text-cyan-700 pt-2 w-28 h-28 bg- mx-auto"
                 }
               />
               <h3
@@ -247,19 +255,19 @@ export default function Home() {
               >
                 <ul className="grid-flow-row">
                   <li className="mb-3">
-                    <strong>ocidental informatica</strong> - Intern FullStack
+                    <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">Ocidental informatica</strong> - Intern FullStack
                     Developer | Sep 2019 - Feb 2020
                   </li>
                   <li className="mb-3">
-                    <strong>agrotols</strong> - Junior FullStack Developer | Jan
+                    <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">Agrotols</strong> - Junior FullStack Developer | Jan
                     2021 - Jul 2021
                   </li>
                   <li className="mb-3">
-                    <strong>pulse</strong> - Junior FullStack Developer | Aug
+                    <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">Pulse</strong> - Junior FullStack Developer | Aug
                     2021 - Aug 2022
                   </li>
                   <li className="mb-3">
-                    <strong>moskit</strong> - Mid Backend Developer | Sep 2022 -
+                    <strong className="">Moskit</strong> - Mid Backend Developer | Sep 2022 -
                     moment
                   </li>
                 </ul>
